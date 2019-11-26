@@ -62,9 +62,10 @@ void MapAccountStorage::AddAccount(std::string id)
 
 Account* MapAccountStorage::GetAccount(std::string id)
 {
-	//Hrmm ... fix... if not exists...
 	Account a = accounts[id];
-	return &a;
+	if(a.GetId() == id)
+		return &a;
+	return nullptr;
 }
 
 
