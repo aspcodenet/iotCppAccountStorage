@@ -6,8 +6,10 @@
 
 int main()
 {
-	int antal = 100000;
+	int antal = 500000;
 	auto storage = new VectorAccountStorage();
+	
+	
 	Bank b(storage);
 	
 	chrono::high_resolution_clock::time_point start;

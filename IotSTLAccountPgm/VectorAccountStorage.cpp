@@ -20,3 +20,18 @@ Account* VectorAccountStorage::GetAccount(std::string id)
 }
 
 
+void ListAccountStorage::AddAccount(std::string id)
+{
+	Account* account = new Account(id);
+	accounts.push_back(account);
+}
+
+Account* ListAccountStorage::GetAccount(std::string id)
+{
+	for (auto a : accounts)
+		if (a->GetId() == id) return a;
+	return nullptr;
+}
+
+
+

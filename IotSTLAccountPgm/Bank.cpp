@@ -1,6 +1,6 @@
 #include "bank.h"
 
-Bank::Bank(VectorAccountStorage* storage)
+Bank::Bank(AccountStorageBase* storage)
 {
 	accountStorage = storage;
 }

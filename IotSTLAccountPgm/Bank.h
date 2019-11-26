@@ -5,10 +5,10 @@
 class Bank
 {
 public:
-	Bank(VectorAccountStorage* storage);
+	Bank(AccountStorageBase* storage);
 	bool AddAccount(string id);
 	Account* GetAccount(string id);
 private:
-	VectorAccountStorage* accountStorage;
+	AccountStorageBase* accountStorage;
 };
 
