@@ -35,3 +35,38 @@ Account* ListAccountStorage::GetAccount(std::string id)
 
 
 
+
+
+
+void VectorAccountNoPointerStorage::AddAccount(std::string id)
+{
+	Account account = Account(id);
+	accounts.push_back(account);
+}
+
+Account* VectorAccountNoPointerStorage::GetAccount(std::string id)
+{
+	for (int i = 0; i < accounts.size(); i++)
+		if (accounts[i].GetId() == id) return &accounts[i];
+	return nullptr;
+}
+
+
+
+
+void MapAccountStorage::AddAccount(std::string id)
+{
+	Account account = Account(id);
+	accounts[id] = account;
+}
+
+Account* MapAccountStorage::GetAccount(std::string id)
+{
+	//Hrmm ... fix... if not exists...
+	Account a = accounts[id];
+	return &a;
+}
+
+
+
+

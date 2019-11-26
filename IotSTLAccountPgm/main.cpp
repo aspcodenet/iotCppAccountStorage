@@ -2,12 +2,23 @@
 #include <string>
 #include "bank.h"
 #include <chrono>
+#include <map>
 
+using namespace std;
 
 int main()
 {
+	map<string, int> lag;
+
+	lag["Djurgården"] = 34;
+	lag["Örebro"] = 22;
+	if (lag["Örebro"] > 20)
+	{
+		cout << "Ojsan";
+	}
+
 	int antal = 500000;
-	auto storage = new VectorAccountStorage();
+	auto storage = new MapAccountStorage();
 	
 	
 	Bank b(storage);

@@ -7,6 +7,7 @@ using namespace std;
 class Account
 {
 public:
+	Account() {}
 	Account(string id, float balance = 0);
 	string GetId();
 private:
