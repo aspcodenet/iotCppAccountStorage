@@ -10,17 +10,17 @@ int main()
 	auto storage = new VectorAccountStorage();
 	Bank b(storage);
 	
-	chrono::high_resolution_clock::time_point t1;
-	chrono::high_resolution_clock::time_point t2;
+	chrono::high_resolution_clock::time_point start;
+	chrono::high_resolution_clock::time_point slut;
 
 	cout << "Starting inserts\n" << endl;
-	t1 = chrono::high_resolution_clock::now();
+	start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < antal; i++)
 	{
 		b.AddAccount(to_string(i));
 	}
-	t2 = chrono::high_resolution_clock::now();
-	auto duration = chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+	slut = chrono::high_resolution_clock::now();
+	auto duration = chrono::duration_cast<std::chrono::milliseconds>(slut - start).count();
 	cout << "Insert tog " << duration << " milliseconds\n";
 
 
@@ -29,10 +29,10 @@ int main()
 	{
 		std::cout << "Ange kontonummer:>";
 		std::cin >> kontonummer;
-		t1 = chrono::high_resolution_clock::now();
+		start = chrono::high_resolution_clock::now();
 		Account* acc = b.GetAccount(kontonummer);
-		t2 = chrono::high_resolution_clock::now();
-		auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+		slut = chrono::high_resolution_clock::now();
+		auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(slut - start).count();
 		std::cout << "Konto hittades ";
 		if (acc == nullptr) std::cout << " inte ";
 		std::cout << ". Tog " << duration << " millisekunder " << std::endl;
