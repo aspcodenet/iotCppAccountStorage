@@ -3,20 +3,24 @@
 #include <string>
 
 using namespace std;
-//typedef enum {
-//	Ok,
-//	Account_NotEnoughMoney
-//} ACCOUT_ERRORS;
+typedef enum {
+	Ok,
+	NotEnoughMoney,
+	InvalidAmount
+} ACCOUNT_ERRORS;
 
 class Account
 {
 public:
-	Account() {}
+	Account() { balance = 0.0f; }
 	Account(string id, float balance = 0);
 	string GetId();
-	//ACCOUT_ERRORS Withdraw(float money);
+	ACCOUNT_ERRORS Withdraw(float money);
+	ACCOUNT_ERRORS Deposit(float money);
+	float GetBalance();
 private:
 	string id;
 	float balance;
 };
+
 
