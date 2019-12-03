@@ -2,6 +2,7 @@
 #include "account.h"
 #include "vectoraccountstorage.h"
 
+
 enum class TRANSFER_ERROR
 {
 	Ok,
