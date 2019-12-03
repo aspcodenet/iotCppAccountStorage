@@ -3,16 +3,17 @@
 #include <string>
 
 using namespace std;
-typedef enum {
+enum class ACCOUNT_ERRORS
+ {
 	Ok,
 	NotEnoughMoney,
 	InvalidAmount
-} ACCOUNT_ERRORS;
+} ;
 
 class Account
 {
 public:
-	Account() { balance = 0.0f; }
+	Account() { balance = 0.0f; 	}
 	Account(string id, float balance = 0);
 	string GetId();
 	ACCOUNT_ERRORS Withdraw(float money);
