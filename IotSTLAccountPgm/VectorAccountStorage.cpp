@@ -10,7 +10,16 @@ VectorAccountStorage::~VectorAccountStorage()
 void VectorAccountStorage::AddAccount(std::string id)
 {
 	Account* account = new Account(id);
+	/*Need som docuementation of course
+	Here we add new account*/
 	accounts.push_back(account);
+	
+}
+
+
+void VectorAccountNoPointerStorage::PaxaMinne(int antal)
+{
+	accounts.reserve(antal);
 }
 
 Account* VectorAccountStorage::GetAccount(std::string id)

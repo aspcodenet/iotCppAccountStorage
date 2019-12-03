@@ -24,6 +24,7 @@ private:
 class VectorAccountNoPointerStorage : public AccountStorageBase
 {
 public:
+	void PaxaMinne(int antal);
 	void AddAccount(string id);
 	Account* GetAccount(string id);
 private:

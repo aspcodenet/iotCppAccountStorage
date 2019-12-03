@@ -18,7 +18,8 @@ int main()
 	}
 
 	int antal = 500000;
-	auto storage = new FileAccountStorage();
+	auto storage = new VectorAccountNoPointerStorage();
+	storage->PaxaMinne(antal);
 	
 	
 	Bank b(storage);
@@ -28,10 +29,10 @@ int main()
 
 	cout << "Starting inserts\n" << endl;
 	start = chrono::high_resolution_clock::now();
-	//for (int i = 0; i < antal; i++)
-	//{
-	//	b.AddAccount(to_string(i));
-	//}
+	for (int i = 0; i < antal; i++)
+	{
+		b.AddAccount(to_string(i));
+	}
 	slut = chrono::high_resolution_clock::now();
 	auto duration = chrono::duration_cast<std::chrono::milliseconds>(slut - start).count();
 	cout << "Insert tog " << duration << " milliseconds\n";
