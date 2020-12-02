@@ -17,21 +17,25 @@ int main()
 		cout << "Ojsan";
 	}
 
-	int antal = 500000;
+	int antal = 1500000;
 	auto storage = new VectorAccountNoPointerStorage();
 	storage->PaxaMinne(antal);
-	
+	//auto storage = new VectorAccountStorage();
 	
 	Bank b(storage);
 	
 	chrono::high_resolution_clock::time_point start;
 	chrono::high_resolution_clock::time_point slut;
 
+
+
+
 	cout << "Starting inserts\n" << endl;
 	start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < antal; i++)
 	{
 		b.AddAccount(to_string(i));
+		string *s = new string(to_string(i)+ to_string(i)+ to_string(i)+ to_string(i)+ to_string(i));
 	}
 	slut = chrono::high_resolution_clock::now();
 	auto duration = chrono::duration_cast<std::chrono::milliseconds>(slut - start).count();
